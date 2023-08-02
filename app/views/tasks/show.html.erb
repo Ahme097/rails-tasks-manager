@@ -1,0 +1,19 @@
+<h3>The Title of your task is</h3>
+<%= @task.title %>
+<br>
+<h3>The Detils of your task is</h3>
+<%= @task.details %>
+<br>
+<% if @task.completed %>
+<%= "TASK COMPLETED"  %>
+<% else %>
+<%= "TASKS NOT COMPLETE" %>
+<% end %>
+<br>
+<%= link_to "Edit this task", edit_task_path %>
+<br>
+<%= link_to "Delete", task_path(@task),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
+<br>
+<%= link_to "Homepage", tasks_path %>
